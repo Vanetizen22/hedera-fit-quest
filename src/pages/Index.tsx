@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, LayoutDashboard, Wallet, Users } from "lucide-react";
+import { Flame, LayoutDashboard, Wallet, Users, Mountain, Scan } from "lucide-react";
 import OnboardingSection from "@/components/conquestfit/OnboardingSection";
 import DashboardSection from "@/components/conquestfit/DashboardSection";
 import WalletSection from "@/components/conquestfit/WalletSection";
 import SocialSection from "@/components/conquestfit/SocialSection";
+import AndesChallengeSection from "@/components/conquestfit/AndesChallengeSection";
+import ARValidatorSection from "@/components/conquestfit/ARValidatorSection";
 
 const tabs = [
   { id: "profile", label: "Perfil", icon: Flame },
   { id: "dashboard", label: "Conquista", icon: LayoutDashboard },
-  { id: "wallet", label: "Billetera", icon: Wallet },
-  { id: "social", label: "Tribu", icon: Users },
+  { id: "andes", label: "Andes", icon: Mountain },
+  { id: "ar", label: "AR", icon: Scan },
+  { id: "wallet", label: "Wallet", icon: Wallet },
+  { id: "social", label: "Social", icon: Users },
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -35,7 +39,9 @@ const Index = () => {
   };
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground flex flex-col">
+    <div className="dark min-h-screen bg-background text-foreground flex flex-col topo-bg">
+      <div className="topo-grid" />
+      
       {/* Header */}
       <header className="sticky top-0 z-50 glass-card-strong border-b border-white/[0.06] px-4 py-3">
         <div className="max-w-lg mx-auto flex items-center justify-between">
@@ -57,7 +63,7 @@ const Index = () => {
       </header>
 
       {/* Content */}
-      <main className="flex-1 overflow-y-auto pb-24">
+      <main className="flex-1 overflow-y-auto pb-24 relative z-10">
         <div className="max-w-lg mx-auto px-4 py-6">
           <AnimatePresence mode="wait">
             <motion.div
@@ -73,6 +79,8 @@ const Index = () => {
               {activeTab === "dashboard" && (
                 <DashboardSection userName={profile?.name || "Conquistador"} />
               )}
+              {activeTab === "andes" && <AndesChallengeSection />}
+              {activeTab === "ar" && <ARValidatorSection />}
               {activeTab === "wallet" && <WalletSection />}
               {activeTab === "social" && <SocialSection />}
             </motion.div>
@@ -90,18 +98,17 @@ const Index = () => {
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 flex flex-col items-center gap-1 py-3 text-xs transition-colors ${
+                className={`relative flex-1 flex flex-col items-center gap-0.5 py-2.5 text-[10px] transition-colors ${
                   isActive ? "text-primary" : "text-muted-foreground"
                 }`}
                 whileTap={{ scale: 0.9 }}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4.5 h-4.5" />
                 <span className="font-medium">{tab.label}</span>
                 {isActive && (
                   <motion.div
                     layoutId="tab-indicator"
-                    className="absolute top-0 left-0 right-0 h-0.5 gradient-orange rounded-full"
-                    style={{ width: "60%", margin: "0 auto", left: 0, right: 0 }}
+                    className="absolute top-0 left-1/4 right-1/4 h-0.5 gradient-orange rounded-full"
                   />
                 )}
               </motion.button>
