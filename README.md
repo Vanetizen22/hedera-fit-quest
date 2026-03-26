@@ -6,6 +6,8 @@ ConquestFit es una plataforma descentralizada que gamifica el bienestar físico 
 🚀 Vision
 En ConquestFit, el usuario no solo entrena; "apuesta" por su disciplina. La plataforma utiliza un modelo de Staking de Comportamiento donde el colateral en USDT se libera únicamente si los objetivos son validados por un oráculo de IA imparcial.
 
+---
+
 🛠️ Tech Stack
 Network: Hedera (HTS, HSCS, HCS).
 AI Agent Framework: ElizaOS + Hedera Agent Kit.
@@ -19,6 +21,8 @@ Analizar Evidencia: Procesar imágenes y videos de rutinas mediante modelos de v
 Ejecutar Transacciones: Al validar una rutina, el agente firma un mensaje en el Hedera Consensus Service (HCS).
 Gestión de Tesorería: Interactuar con el contrato de Escrow para autorizar la liberación de fondos o aplicar slashing (penalizaciones).
 Interacción Social: Notificar en el chat del grupo quién va liderando y motivar a los "conquistadores" rezagados.
+
+-----
 🔄 Flujo del Proyecto
 Creation: Un usuario crea un "Conquest Group" definiendo la meta (ej. 20 días de gimnasio) y el colateral (ej. 50 USDT).
 Staking: Los participantes depositan sus USDT en el Smart Contract de Hedera.
@@ -27,6 +31,9 @@ Consensus: El agente valida la prueba y registra el "Check-in" inmutablemente en
 Settlement: Al finalizar el reto:
 Éxito: Retorno del colateral + Recompensa en $CQT.
 Fallo: El colateral se distribuye entre los ganadores o se quema para deflación del token.
+
+---
+
 📂 Estructura del Repositorio
 ├── agents/             # Configuraciones de ElizaOS y Hedera Agent Kit
 ├── contracts/          # Smart Contracts en Solidity (Escrow & Rewards)
