@@ -1,4 +1,4 @@
-**🏔️ ConquestFit: AI-Driven Fitness Rewards on Hedera
+🏔️ ConquestFit: AI-Driven Fitness Rewards on Hedera
 ConquestFit es una plataforma descentralizada que gamifica el bienestar físico y la disciplina. Utilizando la infraestructura de Hedera, contratos inteligentes para el manejo de colateral en stablecoins y agentes autónomos impulsados por ElizaOS, permitimos que grupos de amigos compitan por metas de salud con incentivos económicos reales.
 
 "Conquista tu rutina, libera tu colateral."
@@ -143,4 +143,4 @@ Diseñado con ❤️ en Mendoza, Argentina. Este proyecto busca fomentar la salu
 
 Licencia: MIT
 
-Developed by: Vanetizen22 and
+Developed by: Eugenia Oyarse y Matias Bataller
