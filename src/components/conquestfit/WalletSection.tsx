@@ -5,7 +5,7 @@ const mockLogs = [
   { id: 1, time: "08:32", msg: "Check-in validado · Prueba #0x3f2a", status: "validated" },
   { id: 2, time: "07:15", msg: "Colateral depositado · 50 USDT", status: "deposit" },
   { id: 3, time: "Ayer", msg: "Consenso alcanzado · Nodo 0.0.4832", status: "consensus" },
-  { id: 4, time: "Ayer", msg: "Recompensa +12.5 $CQT", status: "reward" },
+  { id: 4, time: "Ayer", msg: "Recompensa +12.5 $USDT", status: "reward" },
 ];
 
 const chartData = [40, 55, 45, 70, 65, 80, 75, 90, 85, 95, 88, 100];
@@ -79,7 +79,7 @@ const WalletSection = () => {
         >
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Coins className="w-3.5 h-3.5 text-accent" />
-            $CQT Token
+            USDT
           </div>
           <p className="text-2xl font-bold text-gradient-blue">14,000<span className="text-sm">.42</span></p>
           <div className="flex items-center gap-1">
